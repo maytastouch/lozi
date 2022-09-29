@@ -2,8 +2,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:lozi/screens/homepage.dart';
 
-class Hymn11 extends StatelessWidget {
-  const Hymn11({Key? key}) : super(key: key);
+class Hymn01 extends StatelessWidget {
+  const Hymn01({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,8 +33,17 @@ class Hymn11 extends StatelessWidget {
           Container(
             padding: EdgeInsets.only(top: 10, left: 2),
             child: Text(
-              ' 011 - Ni ta latelela Jesu. ',
+              ' 001 - LILA PALA',
               style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+            ),
+          ),
+
+          //subtitle
+          Container(
+            padding: EdgeInsets.only(top: 20, left: 2),
+            child: Text(
+              ' WATCHMAN BLOW\n THE TRUMPET - A.H. 230,\n C.H. 619 Key: Ab',
+              style: TextStyle(fontSize: 16, wordSpacing: 5),
             ),
           ),
 
@@ -42,16 +51,7 @@ class Hymn11 extends StatelessWidget {
           Container(
             padding: EdgeInsets.only(top: 20, left: 2),
             child: Text(
-              ' I WILL FOLLOW THEE - A.H.282,\n C.H.266, C.S.409\n Key: Ab',
-              style: TextStyle(fontSize: 16, wordSpacing: 5),
-            ),
-          ),
-
-          //verse2
-          Container(
-            padding: EdgeInsets.only(top: 20, left: 2),
-            child: Text(
-              ' 2\n Ni ha nzila i li maswe. Ye sina bulondotwi\n U kile wa i zamaya. Ni ta ku latelela.',
+              ' 1\n Muluti, u lize pala, U ilize hahulu;\n Ya ta utwa bulumiwa, a fetuhe a pile',
               style: TextStyle(fontSize: 18, wordSpacing: 5),
             ),
           ),
@@ -60,7 +60,16 @@ class Hymn11 extends StatelessWidget {
           Container(
             padding: EdgeInsets.only(top: 20, left: 2),
             child: Text(
-              ' \n MAKUTELO:\n Ni ta latelela Jesu. U ni shwezi kaniti;\n Ni ha ba ku fulalela. Ni ta ku latelela.',
+              ' MAKUTELO\n Muluti, u lize pala, U ilize hahulu;\n Mulimu U li, U lize! Ba te ba lukuluhe.',
+              style: TextStyle(fontSize: 18, wordSpacing: 5),
+            ),
+          ),
+
+          //verse2
+          Container(
+            padding: EdgeInsets.only(top: 20, left: 2),
+            child: Text(
+              ' 2\n I lilise fa malundu, Mwa mishitu, mabala;\n Ba mawate huweleza, puluso ya sibili.',
               style: TextStyle(fontSize: 18, wordSpacing: 5),
             ),
           ),
@@ -69,7 +78,7 @@ class Hymn11 extends StatelessWidget {
           Container(
             padding: EdgeInsets.only(top: 20, left: 2),
             child: Text(
-              ' 3\n Ni ka fumana manyando.\n Ni ku likwa hahulu; Ni Wena U no  likilwe,\n Ni ta ku latelela.',
+              ' 3\n I lilise mwa nzila, Mwa maneku a mansu;\n Ili, lika li lukile, Ndate Usa litezi.',
               style: TextStyle(fontSize: 18, wordSpacing: 5),
             ),
           ),
@@ -78,18 +87,13 @@ class Hymn11 extends StatelessWidget {
           Container(
             padding: EdgeInsets.only(top: 20, left: 2),
             child: Text(
-              ' 4\n Ni ha ni li mwa manyando.\n Ni li ya fulalezwi; Wena U no li munyandi.\n Ni ta ku latelela.',
+              ' 4\n Zibisa ba ba imezwi, Ba ba bata Mulena;\n Zibisa pizo ya jesu, yeli, A mu te ku Na.',
               style: TextStyle(fontSize: 18, wordSpacing: 5),
             ),
           ),
 
-          //verse5
-          Container(
-            padding: EdgeInsets.only(top: 20, left: 2),
-            child: Text(
-              ' 5\n Ni ha ni ya mwa mandinda.\n A bata, a tungile: Wena U no a silile.\n Ni sa ku latelela.',
-              style: TextStyle(fontSize: 18, wordSpacing: 5),
-            ),
+          SizedBox(
+            height: 20,
           ),
         ],
       ),

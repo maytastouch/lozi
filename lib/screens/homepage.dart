@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lozi/screens/hymns/hymn01.dart';
 import 'package:lozi/screens/hymns/hymn12.dart';
 
 import 'hymns/hymn11.dart';
@@ -26,8 +27,23 @@ class _HomePage extends State<HomePage> {
       body: ListView(
         padding: const EdgeInsets.all(8),
         children: [
-          //11
+          //001
           //white
+          TextButton(
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(
+                    Color.fromARGB(255, 255, 255, 255)),
+                foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
+                alignment: Alignment.centerLeft,
+              ),
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Hymn01()));
+              },
+              child: Text('001 - Lila pala')),
+
+          //11
+          //grey
           TextButton(
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all<Color>(
@@ -42,7 +58,7 @@ class _HomePage extends State<HomePage> {
               child: Text('011 - Ni ta latelela Jesu ')),
 
           //12
-          //grey
+          //white
           TextButton(
             style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all<Color>(
