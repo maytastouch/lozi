@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lozi/screens/homepage.dart';
+import 'package:lozi/screens/navbar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'lozi Hymn',
-      home: HomePage(),
+      home: navBar(),
     );
   }
 }

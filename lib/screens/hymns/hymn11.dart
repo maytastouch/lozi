@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:lozi/screens/homepage.dart';
+import 'package:lozi/screens/navbar.dart';
 
 class Hymn11 extends StatelessWidget {
   const Hymn11({Key? key}) : super(key: key);
@@ -12,7 +13,7 @@ class Hymn11 extends StatelessWidget {
         leading: IconButton(
           onPressed: () {
             Navigator.push(
-                context, MaterialPageRoute(builder: (context) => HomePage()));
+                context, MaterialPageRoute(builder: (context) => navBar()));
           },
           icon: Icon(Icons.arrow_back),
         ),
@@ -38,7 +39,7 @@ class Hymn11 extends StatelessWidget {
             ),
           ),
 
-          //verse1
+          //subtitle
           Container(
             padding: EdgeInsets.only(top: 20, left: 2),
             child: Text(

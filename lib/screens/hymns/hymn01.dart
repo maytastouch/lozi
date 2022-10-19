@@ -1,18 +1,24 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:lozi/screens/homepage.dart';
+import 'package:lozi/screens/navbar.dart';
+import 'package:lozi/screens/favorites.dart';
+import 'package:lozi/screens/settings.dart';
 
 class Hymn01 extends StatelessWidget {
   const Hymn01({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    int index = 0;
+    final pages = [HomePage(), favorites(), settings()];
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {
             Navigator.push(
-                context, MaterialPageRoute(builder: (context) => HomePage()));
+                context, MaterialPageRoute(builder: (context) => navBar()));
           },
           icon: Icon(Icons.arrow_back),
         ),

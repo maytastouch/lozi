@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:lozi/screens/homepage.dart';
+import 'package:lozi/screens/navbar.dart';
 
 class Hymn18 extends StatelessWidget {
   const Hymn18({Key? key}) : super(key: key);
@@ -12,7 +13,7 @@ class Hymn18 extends StatelessWidget {
         leading: IconButton(
           onPressed: () {
             Navigator.push(
-                context, MaterialPageRoute(builder: (context) => HomePage()));
+                context, MaterialPageRoute(builder: (context) => navBar()));
           },
           icon: Icon(Icons.arrow_back),
         ),
