@@ -1,29 +1,30 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:lozi/screens/homepage.dart';
-import 'package:lozi/screens/navbar.dart';
-import 'package:lozi/screens/favorites.dart';
-import 'package:lozi/screens/settings.dart';
+import 'package:flutter/src/foundation/key.dart';
+import 'package:flutter/src/widgets/container.dart';
+import 'package:flutter/src/widgets/framework.dart';
 
-class Hymn01 extends StatelessWidget {
-  const Hymn01({Key? key}) : super(key: key);
+import '../home_page.dart';
+
+class hymn04 extends StatefulWidget {
+  const hymn04({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    int index = 0;
-    final pages = [HomePage(), favorites(), settings()];
+  State<hymn04> createState() => _hymn04State();
+}
 
+class _hymn04State extends State<hymn04> {
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {
             Navigator.push(
-                context, MaterialPageRoute(builder: (context) => navBar()));
+                context, MaterialPageRoute(builder: (context) => TabPage1()));
           },
           icon: Icon(Icons.arrow_back),
         ),
         backgroundColor: Colors.green,
-        title: const Text('Silozi SDA Hymn'),
         centerTitle: true,
         automaticallyImplyLeading: false,
         actions: [
@@ -39,7 +40,7 @@ class Hymn01 extends StatelessWidget {
           Container(
             padding: EdgeInsets.only(top: 10, left: 2),
             child: Text(
-              ' 001 - LILA PALA',
+              ' 004 - WA TA',
               style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
             ),
           ),
@@ -48,7 +49,7 @@ class Hymn01 extends StatelessWidget {
           Container(
             padding: EdgeInsets.only(top: 20, left: 2),
             child: Text(
-              ' WATCHMAN BLOW\n THE TRUMPET - A.H. 230,\n C.H. 619 Key: Ab',
+              ' HE IS COMING\n A.H. 407, C.H. 669 Key: A',
               style: TextStyle(fontSize: 16, wordSpacing: 5),
             ),
           ),
@@ -57,16 +58,20 @@ class Hymn01 extends StatelessWidget {
           Container(
             padding: EdgeInsets.only(top: 20, left: 2),
             child: Text(
-              ' 1\n Muluti, u lize pala, U ilize hahulu;\n Ya ta utwa bulumiwa, a fetuhe a pile',
+              " 1\n Ki a mande manzwi mwa zebe ya mueti,\n Yanz'a yambaela kwa hule!\n Kapili-pili Mupulusi wa ta, cwale mubuso wa\n ta.",
               style: TextStyle(fontSize: 18, wordSpacing: 5),
             ),
           ),
 
-          //chorus
+          SizedBox(
+            height: 20,
+          ),
+
+          //makutelo
           Container(
             padding: EdgeInsets.only(top: 20, left: 2),
             child: Text(
-              ' MAKUTELO\n Muluti, u lize pala, U ilize hahulu;\n Mulimu U li, U lize! Ba te ba lukuluhe.',
+              " MAKUTELO\n Wa taha, Wa taha cwanon'u fa,\n Wa kuta fa lifasi le;\n Mi baeti bat a t'o ya kwa kanya, Jesu ha a\n to lena.",
               style: TextStyle(fontSize: 18, wordSpacing: 5),
             ),
           ),
@@ -75,25 +80,32 @@ class Hymn01 extends StatelessWidget {
           Container(
             padding: EdgeInsets.only(top: 20, left: 2),
             child: Text(
-              ' 2\n I lilise fa malundu, Mwa mishitu, mabala;\n Ba mawate huweleza, puluso ya sibili.',
+              " 2\n Mabita a kale mo ku 'nzi baeti,\n A ta t'o kwahululwa cwale;\n Ee, ni ba ba lobezi mwa liwate,\n Ba ta 'na fa fasi fa.",
               style: TextStyle(fontSize: 18, wordSpacing: 5),
             ),
           ),
 
+          SizedBox(
+            height: 20,
+          ),
           //verse3
           Container(
             padding: EdgeInsets.only(top: 20, left: 2),
             child: Text(
-              ' 3\n I lilise mwa nzila, Mwa maneku a mansu;\n Ili, lika li lukile, Ndate Usa litezi.',
+              " 3\n Lu ta katana mwa edeni yo munca,\n lu opela lipina ze nde;\n Ba ta zwa kwa mutulo ni kwa mbowela;\n ku t'o lapela Jesu.",
               style: TextStyle(fontSize: 18, wordSpacing: 5),
             ),
+          ),
+
+          SizedBox(
+            height: 20,
           ),
 
           //verse4
           Container(
             padding: EdgeInsets.only(top: 20, left: 2),
             child: Text(
-              ' 4\n Zibisa ba ba imezwi, Ba ba bata Mulena;\n Zibisa pizo ya jesu, yeli, A mu te ku Na.',
+              " 4\n Aleluya, Amen! Aleluya hape!\n Lwa ya cwale ha lu sepeha;\n Lu libellee ni ku nyakalala,\n Lu ta fiwa mushukwe.",
               style: TextStyle(fontSize: 18, wordSpacing: 5),
             ),
           ),

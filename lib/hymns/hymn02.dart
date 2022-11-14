@@ -1,11 +1,18 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:lozi/screens/homepage.dart';
-import 'package:lozi/screens/navbar.dart';
+import 'package:flutter/src/foundation/key.dart';
+import 'package:flutter/src/widgets/container.dart';
+import 'package:flutter/src/widgets/framework.dart';
 
-class Hymn18 extends StatelessWidget {
-  const Hymn18({Key? key}) : super(key: key);
+import '../home_page.dart';
 
+class hymn02 extends StatefulWidget {
+  const hymn02({Key? key}) : super(key: key);
+
+  @override
+  State<hymn02> createState() => _hymn02State();
+}
+
+class _hymn02State extends State<hymn02> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,12 +20,11 @@ class Hymn18 extends StatelessWidget {
         leading: IconButton(
           onPressed: () {
             Navigator.push(
-                context, MaterialPageRoute(builder: (context) => navBar()));
+                context, MaterialPageRoute(builder: (context) => TabPage1()));
           },
           icon: Icon(Icons.arrow_back),
         ),
         backgroundColor: Colors.green,
-        title: const Text('Silozi SDA Hymn'),
         centerTitle: true,
         automaticallyImplyLeading: false,
         actions: [
@@ -34,16 +40,16 @@ class Hymn18 extends StatelessWidget {
           Container(
             padding: EdgeInsets.only(top: 10, left: 2),
             child: Text(
-              ' 012 - Ku na ni siliba',
+              ' 002 - MULENA U FA MUNYAKO',
               style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
             ),
           ),
 
-          //verse1
+          //subtitle
           Container(
             padding: EdgeInsets.only(top: 20, left: 2),
             child: Text(
-              ' THERE IS A FOUNTAIN - A.H.135,\n C.H.163, C.S.146\n Key: C',
+              ' THE COMING KING IS\n AT THE DOOR - A.H. 411,\n C.H. 546 Key: Bb',
               style: TextStyle(fontSize: 16, wordSpacing: 5),
             ),
           ),
@@ -52,55 +58,60 @@ class Hymn18 extends StatelessWidget {
           Container(
             padding: EdgeInsets.only(top: 20, left: 2),
             child: Text(
-              ' 1\n Bona siliba sa mali, A zwile ku Jesu;\n Lisinyi ze nwela mwa ten. Li tapa milatu.\n Li tapa milatu,Li tapa milatu;\n Lisinyi ze nwela mwa ten Li tapa milatu.',
+              " 1\n Mulena U fa munyako, ya na lwezi sifapano,\n Ee, ba ba lukile cwale, Ba t'o ya ni Jesu.",
               style: TextStyle(fontSize: 18, wordSpacing: 5),
             ),
           ),
+
+          SizedBox(
+            height: 20,
+          ),
+
+          //makutelo
+          Container(
+            padding: EdgeInsets.only(top: 20, left: 2),
+            child: Text(
+              " MAKUTELO\n Munyako, munyako Mulena u 'nzi fa munyako,\n Jesu Wa ta, Jesu wa ta, U yemi fa munyako.",
+              style: TextStyle(fontSize: 18, wordSpacing: 5),
+            ),
+          ),
+
+          SizedBox(
+            height: 20,
+          ),
+
           //verse2
           Container(
             padding: EdgeInsets.only(top: 20, left: 2),
             child: Text(
-              ' 2\n Sholi la taba ku bona, Sona siliba se;\n Ni na ya swana ni Yena, Ni tapise libi.\n Ni tapise libi, Ni tapise libi;\n Ni na ya swana ni Yena, Ni tapise libi.',
+              " 2\n Lisupo za hae za kuta, ka mwaha za ezahala,\n Lu tuha lu bona cwale, ku taha kwa Jesu.",
               style: TextStyle(fontSize: 18, wordSpacing: 5),
             ),
+          ),
+          SizedBox(
+            height: 20,
           ),
 
           //verse3
           Container(
             padding: EdgeInsets.only(top: 20, left: 2),
             child: Text(
-              ' 3\n Mawe, Jesu, mali a Hao,\n Ha na ku fokola; Mane batu ba Mulimu,\n Ba yo liululwa: Ba yo liululwa,\n Ba yo liululwa. Mane batu ba Mulimu,\n Ba yo liululwa.',
+              " 3\n Fa fasi lindw'a li feli, Ha ku  na kozo ni tabo,\n Konji Mulena h'a kuta, kut'o feza lifu.",
               style: TextStyle(fontSize: 18, wordSpacing: 5),
             ),
+          ),
+          SizedBox(
+            height: 20,
           ),
 
           //verse4
           Container(
             padding: EdgeInsets.only(top: 20, left: 2),
             child: Text(
-              ' 4\n Ka sepo ni boni mali, A zwa mwa maniba;\n Ni ambola za lilato, Mane muta ni shwa.\n Mane muta ni shwa, Mane muta ni shwa;\n Ni ambola za lilato, Mane muta ni shwa.',
+              " 4\n Hona mo mwa naha ye nca, Lu yo 'na lu li\n ba banca, Lu ka y'o ina lu sa shwi,\n kamitanimita.",
               style: TextStyle(fontSize: 18, wordSpacing: 5),
             ),
           ),
-
-          //verse5
-          Container(
-            padding: EdgeInsets.only(top: 20, left: 2),
-            child: Text(
-              ' 5\n Jesu Wa ni lukiseza, Ni ha ni li maswe:\n Tifo ya mali a Jesu, Bupilo katima,\n Bupilo kamita, Bupilo kamita;\n Tifo ya mali a Jesu, Bupilo kamita.',
-              style: TextStyle(fontSize: 18, wordSpacing: 5),
-            ),
-          ),
-
-          //verse6
-          Container(
-            padding: EdgeInsets.only(top: 20, left: 2),
-            child: Text(
-              ' 6\n Pina i ten ye munati, Ye ni ta opela:\n Muta lilimi le la ka, li zwa mwa libita.\n Li zwa mwa libita, Li zwa mwa libita:\n Muta lilimi le la ka, Li zwa mwa libita.',
-              style: TextStyle(fontSize: 18, wordSpacing: 5),
-            ),
-          ),
-
           SizedBox(
             height: 20,
           ),

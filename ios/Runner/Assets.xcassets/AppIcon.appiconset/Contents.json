@@ -31,25 +31,25 @@
       "size" : "29x29"
     },
     {
-      "filename" : "352-3525144_seventh-day-adventist-logo-png-transparent-png 3.png",
+      "filename" : "Icon-App-40x40@2x.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "40x40"
     },
     {
-      "filename" : "352-3525144_seventh-day-adventist-logo-png-transparent-png 2.png",
+      "filename" : "Icon-App-40x40@3x.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "40x40"
     },
     {
-      "filename" : "352-3525144_seventh-day-adventist-logo-png-transparent-png 1.png",
+      "filename" : "app_icon.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x60"
     },
     {
-      "filename" : "352-3525144_seventh-day-adventist-logo-png-transparent-png.png",
+      "filename" : "ipad2 1.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "60x60"
@@ -73,7 +73,7 @@
       "size" : "29x29"
     },
     {
-      "filename" : "Icon-App-29x29@2x.png",
+      "filename" : "ipad2 2.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "29x29"
@@ -91,13 +91,13 @@
       "size" : "40x40"
     },
     {
-      "filename" : "Icon-App-76x76@1x.png",
+      "filename" : "ipad1.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "76x76"
     },
     {
-      "filename" : "Icon-App-76x76@2x.png",
+      "filename" : "ipad2.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "76x76"
