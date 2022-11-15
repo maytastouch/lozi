@@ -38,8 +38,52 @@ class HomePage extends StatelessWidget {
   }
 }
 
-class TabPage1 extends StatelessWidget {
+class TabPage1 extends StatefulWidget {
   const TabPage1({Key? key}) : super(key: key);
+
+  @override
+  State<TabPage1> createState() => _TabPage1State();
+}
+
+class _TabPage1State extends State<TabPage1> {
+  List<Map<String, dynamic>> _allHymns = [
+    {"id": "001", "name": "LILA PALA"},
+    {"id": "002", "name": "MULENA U FA MUNYAKO"},
+    {"id": "003", "name": "MUTA LU TA BONANA"},
+    {"id": "004", "name": "WA TA"},
+    {"id": "005", "name": "KWA MUNZI KI KWA HULE NJI"},
+    {"id": "006", "name": "BALUMELI A MU TONE"},
+    {"id": "007", "name": "HA A KA TAHA"},
+    {"id": "008", "name": "MUTA MABIZO A BIZWA"},
+  ];
+
+  List<Widget> route = [Hymn01(), hymn02(), hymn03(), hymn04()];
+
+  List<Map<String, dynamic>> _foundHymns = [];
+  @override
+  initState() {
+    _foundHymns = _allHymns;
+    super.initState();
+  }
+
+  void _runFilter(String enteredKeyWord) {
+    List<Map<String, dynamic>> results = [];
+    if (enteredKeyWord.isEmpty) {
+      results = _allHymns;
+    } else {
+      results = _allHymns
+          .where((user) =>
+              user["name"]
+                  .toUpperCase()
+                  .contains(enteredKeyWord.toUpperCase()) ||
+              user["id"].toUpperCase().contains(enteredKeyWord.toUpperCase()))
+          .toList();
+    }
+
+    setState(() {
+      _foundHymns = results;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,157 +93,58 @@ class TabPage1 extends StatelessWidget {
         title: const Text('Silozi SDA Hymn'),
         centerTitle: true,
         automaticallyImplyLeading: false,
-        actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
-        ],
       ),
-      body: ListView(
-        padding: const EdgeInsets.all(8),
+      body: Column(
         children: [
-          //001
-          //white
-          TextButton(
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(
-                    Color.fromARGB(255, 255, 255, 255)),
-                foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
-                alignment: Alignment.centerLeft,
-              ),
-              onPressed: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Hymn01()));
-              },
-              child: Text('001 - Lila pala')),
-
-          //002
-          //grey
-          TextButton(
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(
-                    Color.fromARGB(255, 216, 212, 212)),
-                foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
-                alignment: Alignment.centerLeft,
-              ),
-              onPressed: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => hymn02()));
-              },
-              child: Text('002 - Mulena u fa munyako')),
-
-          //003
-          //white
-          TextButton(
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all<Color>(
-                  Color.fromARGB(255, 255, 255, 255)),
-              foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
-              alignment: Alignment.centerLeft,
-            ),
-            onPressed: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => hymn03()));
-            },
-            child: Text(
-              '003 - Muta lu ta bonana',
+          const SizedBox(
+            height: 10,
+          ),
+          Container(
+            margin: const EdgeInsets.fromLTRB(16, 16, 16, 1),
+            child: TextField(
+              onChanged: (value) => _runFilter(value),
+              decoration: InputDecoration(
+                  prefixIcon: const Icon(Icons.search),
+                  hintText: 'keta',
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      borderSide: const BorderSide(color: Colors.green))),
             ),
           ),
-
-          //004
-          //grey
-          TextButton(
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(
-                    Color.fromARGB(255, 216, 212, 212)),
-                foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
-                alignment: Alignment.centerLeft,
-              ),
-              onPressed: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => hymn04()));
-              },
-              child: Text('004 - Wa ta')),
-
-          //005
-          //white
-          TextButton(
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all<Color>(
-                  Color.fromARGB(255, 255, 255, 255)),
-              foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
-              alignment: Alignment.centerLeft,
-            ),
-            onPressed: () {
-              // Navigator.push(
-              //     context, MaterialPageRoute(builder: (context) => Hymn18()));
-            },
-            child: Text(
-              '005 - Put name of the hymn',
-            ),
-          ),
-
-          //006
-          //grey
-          TextButton(
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(
-                    Color.fromARGB(255, 216, 212, 212)),
-                foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
-                alignment: Alignment.centerLeft,
-              ),
-              onPressed: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => hymn02()));
-              },
-              child: Text('006 - Balumeli a mu tone')),
-
-          //007
-          //white
-          TextButton(
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all<Color>(
-                  Color.fromARGB(255, 255, 255, 255)),
-              foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
-              alignment: Alignment.centerLeft,
-            ),
-            onPressed: () {
-              // Navigator.push(
-              //     context, MaterialPageRoute(builder: (context) => Hymn18()));
-            },
-            child: Text(
-              '007 - Ha ka taha',
-            ),
-          ),
-
-          //008
-          //grey
-          TextButton(
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(
-                    Color.fromARGB(255, 216, 212, 212)),
-                foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
-                alignment: Alignment.centerLeft,
-              ),
-              onPressed: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => hymn02()));
-              },
-              child: Text('008 - Muta mabizo a bizwa')),
-
-          //009
-          //white
-          TextButton(
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all<Color>(
-                  Color.fromARGB(255, 255, 255, 255)),
-              foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
-              alignment: Alignment.centerLeft,
-            ),
-            onPressed: () {
-              // Navigator.push(
-              //     context, MaterialPageRoute(builder: (context) => Hymn18()));
-            },
-            child: Text(
-              '009 - Put name here',
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ListView.builder(
+                  itemCount: _foundHymns.length,
+                  itemBuilder: (context, index) => Card(
+                        key: ValueKey(_foundHymns[index]["id"]),
+                        color: Color.fromARGB(255, 255, 255, 255),
+                        shadowColor: Colors.white,
+                        //elevation: 2,
+                        margin: const EdgeInsets.symmetric(vertical: 1),
+                        child: ListTile(
+                          leading: Container(
+                            margin: EdgeInsets.fromLTRB(0, 4, 0, 0),
+                            child: Text(
+                              _foundHymns[index]["id"].toString(),
+                              style: const TextStyle(
+                                  fontSize: 14, color: Colors.black),
+                            ),
+                          ),
+                          // title: Text(
+                          //   _allHymns[index]['name'],
+                          //   style: TextStyle(color: Colors.white),
+                          // ),
+                          title: Text(
+                            '${_foundHymns[index]["name"].toString()}',
+                            style: TextStyle(color: Colors.black),
+                          ),
+                          onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => route[index])),
+                        ),
+                      )),
             ),
           ),
         ],
@@ -207,6 +152,8 @@ class TabPage1 extends StatelessWidget {
     );
   }
 }
+
+//favorites page
 
 class TabPage2 extends StatelessWidget {
   @override
@@ -217,25 +164,8 @@ class TabPage2 extends StatelessWidget {
         title: const Text('Silozi SDA Hymn'),
         centerTitle: true,
         automaticallyImplyLeading: false,
-        actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
-        ],
       ),
-      body: Container(
-        width: double.infinity,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('Tab 2'),
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => Page2('tab2')));
-                },
-                child: Text('Go to page2'))
-          ],
-        ),
-      ),
+      body: Container(),
     );
   }
 }
@@ -249,25 +179,8 @@ class TabPage3 extends StatelessWidget {
         title: const Text('Silozi SDA Hymn'),
         centerTitle: true,
         automaticallyImplyLeading: false,
-        actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
-        ],
       ),
-      body: Container(
-        width: double.infinity,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('Tab 3'),
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => Page2('tab3')));
-                },
-                child: Text('Go to page2'))
-          ],
-        ),
-      ),
+      body: Container(),
     );
   }
 }
@@ -281,21 +194,7 @@ class Page1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Page 1')),
-      body: Container(
-        width: double.infinity,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('in $inTab Page 1'),
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => Page2(inTab)));
-                },
-                child: Text('Go to page2'))
-          ],
-        ),
-      ),
+      body: Container(),
     );
   }
 }
@@ -308,21 +207,7 @@ class Page2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Page 2')),
-      body: Container(
-        width: double.infinity,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('in $inTab Page 2'),
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => Page3(inTab)));
-                },
-                child: Text('Go to page3'))
-          ],
-        ),
-      ),
+      body: Container(),
     );
   }
 }

@@ -71,7 +71,7 @@ class _hymn02State extends State<hymn02> {
           Container(
             padding: EdgeInsets.only(top: 20, left: 2),
             child: Text(
-              " MAKUTELO\n Munyako, munyako Mulena u 'nzi fa munyako,\n Jesu Wa ta, Jesu wa ta, U yemi fa munyako.",
+              " MAKUTELO\n Munyako, munyako Mulena u 'nzi fa\n munyako, Jesu Wa ta, Jesu wa ta, U yemi\n fa munyako.",
               style: TextStyle(fontSize: 18, wordSpacing: 5),
             ),
           ),
@@ -84,7 +84,7 @@ class _hymn02State extends State<hymn02> {
           Container(
             padding: EdgeInsets.only(top: 20, left: 2),
             child: Text(
-              " 2\n Lisupo za hae za kuta, ka mwaha za ezahala,\n Lu tuha lu bona cwale, ku taha kwa Jesu.",
+              " 2\n Lisupo za hae za kuta, ka mwaha za\n ezahala, Lu tuha lu bona cwale, ku taha\n kwa Jesu.",
               style: TextStyle(fontSize: 18, wordSpacing: 5),
             ),
           ),
@@ -96,7 +96,7 @@ class _hymn02State extends State<hymn02> {
           Container(
             padding: EdgeInsets.only(top: 20, left: 2),
             child: Text(
-              " 3\n Fa fasi lindw'a li feli, Ha ku  na kozo ni tabo,\n Konji Mulena h'a kuta, kut'o feza lifu.",
+              " 3\n Fa fasi lindw'a li feli, Ha ku  na kozo ni\n tabo, Konji Mulena h'a kuta, kut'o feza lifu.",
               style: TextStyle(fontSize: 18, wordSpacing: 5),
             ),
           ),

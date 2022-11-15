@@ -93,7 +93,7 @@ class _hymn03State extends State<hymn03> {
           Container(
             padding: EdgeInsets.only(top: 20, left: 2),
             child: Text(
-              " 3\n Ha ki tabo fapil'a hae, Manyando at fela;\n Muta ku luka ze maswe, Ze patilwe li bonwe.",
+              " 3\n Ha ki tabo fapil'a hae, Manyando at fela;\n Muta ku luka ze maswe, Ze patilwe li\n bonwe.",
               style: TextStyle(fontSize: 18, wordSpacing: 5),
             ),
           ),
@@ -106,7 +106,7 @@ class _hymn03State extends State<hymn03> {
           Container(
             padding: EdgeInsets.only(top: 20, left: 2),
             child: Text(
-              " 4\n Ku bonana ha ki bunde! Ku bona ni ku ziba;\n Ku bonana ni mulena Jesu ya ni latile.",
+              " 4\n Ku bonana ha ki bunde! Ku bona ni ku\n ziba; Ku bonana ni mulena Jesu ya ni latile.",
               style: TextStyle(fontSize: 18, wordSpacing: 5),
             ),
           ),
