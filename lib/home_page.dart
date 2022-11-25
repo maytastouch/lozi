@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:persistent_bottom_bar/hymns/hymn02.dart';
 import 'package:persistent_bottom_bar/hymns/hymn03.dart';
 import 'package:persistent_bottom_bar/hymns/hymn04.dart';
+import 'package:persistent_bottom_bar/hymns/hymn06.dart';
 import 'package:persistent_bottom_bar/persistent_bottom_bar_scaffold.dart';
+import 'package:provider/provider.dart';
 
 import 'hymns/hymn01.dart';
 
@@ -10,6 +12,8 @@ class HomePage extends StatelessWidget {
   final _tab1navigatorKey = GlobalKey<NavigatorState>();
   final _tab2navigatorKey = GlobalKey<NavigatorState>();
   final _tab3navigatorKey = GlobalKey<NavigatorState>();
+
+  get hymn => null;
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +61,7 @@ class _TabPage1State extends State<TabPage1> {
     {"id": "008", "name": "MUTA MABIZO A BIZWA"},
   ];
 
-  List<Widget> route = [Hymn01(), hymn02(), hymn03(), hymn04()];
+  List<Widget> route = [Hymn01(), hymn02(), hymn03(), hymn04(), hymn06()];
 
   List<Map<String, dynamic>> _foundHymns = [];
   @override
@@ -154,8 +158,9 @@ class _TabPage1State extends State<TabPage1> {
 }
 
 //favorites page
-
 class TabPage2 extends StatelessWidget {
+  List<Map<String, dynamic>> favoriteHymns = [];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -165,7 +170,46 @@ class TabPage2 extends StatelessWidget {
         centerTitle: true,
         automaticallyImplyLeading: false,
       ),
-      body: Container(),
+      body: Column(
+        children: [
+          const SizedBox(
+            height: 10,
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ListView.builder(
+                  itemCount: favoriteHymns.length,
+                  itemBuilder: (context, index) => Card(
+                        key: ValueKey(favoriteHymns[index]["id"]),
+                        color: Color.fromARGB(255, 255, 255, 255),
+                        shadowColor: Colors.white,
+                        //elevation: 2,
+                        margin: const EdgeInsets.symmetric(vertical: 1),
+                        child: ListTile(
+                          leading: Container(
+                            margin: EdgeInsets.fromLTRB(0, 4, 0, 0),
+                            child: Text(
+                              favoriteHymns[index]["id"].toString(),
+                              style: const TextStyle(
+                                  fontSize: 14, color: Colors.black),
+                            ),
+                          ),
+                          // title: Text(
+                          //   _allHymns[index]['name'],
+                          //   style: TextStyle(color: Colors.white),
+                          // ),
+                          title: Text(
+                            '${favoriteHymns[index]["name"].toString()}',
+                            style: TextStyle(color: Colors.black),
+                          ),
+                          onTap: () {},
+                        ),
+                      )),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

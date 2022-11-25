@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:persistent_bottom_bar/home_page.dart';
 
 class Hymn01 extends StatelessWidget {
-  const Hymn01({Key? key}) : super(key: key);
+  Hymn01({Key? key}) : super(key: key);
+
+  bool selected = true;
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +23,10 @@ class Hymn01 extends StatelessWidget {
         automaticallyImplyLeading: false,
         actions: [
           IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.favorite_border_outlined),
+            onPressed: () {
+              //change icon when pressed
+            },
+            icon: Icon(Icons.favorite_border_outlined),
           )
         ],
       ),
